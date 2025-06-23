@@ -41,10 +41,14 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'tutors',
-    'sessions',
+    'tutor_sessions',
     'payments',
     'chats',
 ]
+
+
+AUTH_USER_MODEL = 'users.User'
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
