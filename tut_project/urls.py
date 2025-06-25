@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('users.urls')),  # Auth endpoints
     path('tutors/', include('tutors.urls')), # Tutors endpoints
-
+    path('sessions/', include('tutor_sessions.urls')), # Tutor Sessions endpoints
 ]
