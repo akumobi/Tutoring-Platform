@@ -22,4 +22,6 @@ urlpatterns = [
     path('auth/', include('users.urls')),  # Auth endpoints
     path('tutors/', include('tutors.urls')), # Tutors endpoints
     path('sessions/', include('tutor_sessions.urls')), # Tutor Sessions endpoints
+    path('payments/', include('payments.urls')), # Payment endpoints
+
 ]

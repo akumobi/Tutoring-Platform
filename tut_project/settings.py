@@ -14,9 +14,17 @@ from pathlib import Path
 
 from datetime import timedelta
 
+from dotenv import load_dotenv
+import os
+load_dotenv()
+
+# Now you can access variables
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+
+
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),  # Default is 5
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=1440),  # Default is 5
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=5),
 }
 
 
@@ -28,10 +36,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ra+r$(gs3%cw52(7w#ufsf9437rw1qq&*j7&(wnx)ioqlj-98k'
+
+SECRET_KEY = os.getenv("SECRET_KEY", "fallback-secret-key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = []
 
